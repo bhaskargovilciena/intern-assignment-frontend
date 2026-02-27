@@ -21,4 +21,8 @@ export class DeviceService {
   getAllDevices():Observable<Result[]> {
     return this.httpClient.get<Result[]>(`${this.baseURL}/device/search`)
   }
+
+  createDevice(device: Device):Observable<Result[]> {
+    return this.httpClient.post<Result[]>(`${this.baseURL}/device/create`, device)
+  }
 }

@@ -1,1 +1,38 @@
-<p>create-device works!</p>
+<div class="col-md-6 offset-md-3">
+    <h3> Create Employee </h3>
+    <form (ngSubmit) = "onSubmit()">
+    
+        <div class="form-group">
+            <label> Device Name</label>
+            <input type="text" class ="form-control" id = "deviceName"
+                [(ngModel)] = "device.deviceName" name = "deviceName">
+        </div>
+        
+        <div class="form-group">
+            <label> Part Number</label>
+            <input type="text" class ="form-control" id = "partNumber"
+                [(ngModel)] = "device.partNumber" name = "partNumber">
+        </div>
+        
+        <div class="form-group">
+            <label> Device Type</label>
+            <input type="text" class ="form-control" id = "deviceType"
+                [(ngModel)] = "device.deviceType" name = "deviceType">
+        </div>
+
+        <div class="form-group">
+            <label> Building Name</label>
+            <input type="text" class="form-control" id="buildingName"
+            [(ngModel)]="device.buildingName" name="buildingName">
+        </div>
+
+        <div class="form-group">
+            <label> Number Of Shelf Positions</label>
+            <input type="number" class="form-control" id="numberOfShelfPositions"
+            [(ngModel)]="device.numberOfShelfPositions" name="numberOfShelfPositions">
+        </div>
+    
+        <button class = "btn btn-success" type ="submit">Submit</button>
+    
+    </form>
+    </div> 

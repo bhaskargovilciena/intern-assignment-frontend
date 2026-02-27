@@ -18,7 +18,6 @@ export class DeviceList implements OnInit {
   devices:Result[] = []
 
   constructor(private deviceService:DeviceService, private cdr:ChangeDetectorRef) {}
-  ngZone = inject(NgZone)
 
   ngOnInit():void {
     this.getAllDevices();
