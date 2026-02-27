@@ -17,7 +17,7 @@ export const routes: Routes = [
         component: CreateDevice
     },
     {
-        path: 'view-shelf-positions/:deviceId',
+        path: 'view-shelf-positions',
         component: ShelfPositions,
     }
 ];

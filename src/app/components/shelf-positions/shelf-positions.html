@@ -1,1 +1,28 @@
-<p>shelf-positions works!</p>
+<h4> Shelf Positions List For Device Name: {{device?.device?.deviceName}}</h4>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th> ID</th>
+            <th> Shelf Name</th>
+            <th> Part Number</th>
+            <th>Performable Operation</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (item of device?.shelfPositions; track $index) {
+            <tr>
+            <td> {{item.shelfPosition.id}} </td>
+            @if(item.shelf) {
+                <td>{{item.shelf.name}}</td>
+                <td>{{item.shelf.partNumber}}</td>
+                <td><button class="btn">Delete</button></td>
+            }
+            @else {
+                <td>NA</td>
+                <td>NA</td>
+                <td><button class="btn">Add</button></td>
+            }
+            </tr>
+        }
+    </tbody>
+</table>

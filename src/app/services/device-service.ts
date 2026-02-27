@@ -22,6 +22,8 @@ export class DeviceService {
 
   constructor(private httpClient:HttpClient) {}
 
+  private currentDevice:Result|null = null;
+
   private baseURL = "http://localhost:8080"
   
   getAllDevices():Observable<Result[]> {
@@ -30,5 +32,13 @@ export class DeviceService {
 
   createDevice(device: Device):Observable<Result[]> {
     return this.httpClient.post<Result[]>(`${this.baseURL}/device/create`, device)
+  }
+
+  getCurrentDevice():Result|null {
+    return this.currentDevice;
+  }
+
+  setCurrentDevice(device:Result|null):void {
+    this.currentDevice = device;
   }
 }

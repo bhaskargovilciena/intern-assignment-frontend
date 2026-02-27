@@ -3,7 +3,7 @@ import { DeviceService } from '../../services/device-service';
 import { Device } from '../../classes/device';
 import { ShelfPosition } from '../../classes/shelf-position';
 import { Shelf } from '../../classes/shelf';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 
 interface ShelfPositionToShelf {
   shelfPosition:ShelfPosition,
@@ -17,7 +17,7 @@ interface Result {
 
 @Component({
   selector: 'app-device-list',
-  imports: [RouterLink],
+  imports: [],
   templateUrl: './device-list.html',
   styleUrl: './device-list.css',
 })
@@ -38,7 +38,8 @@ export class DeviceList implements OnInit {
     })
   }
 
-  handleViewShelfPositions(deviceId:string) {
-    console.log(deviceId)
+  handleViewShelfPositions(device:Result|null) {
+    this.deviceService.setCurrentDevice(device)
+    this.router.navigate(['/view-shelf-positions'])
   }
 }

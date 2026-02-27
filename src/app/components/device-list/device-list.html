@@ -19,8 +19,7 @@
             <td> {{device.device.deviceType}} </td>
             <td> {{device.device.numberOfShelfPositions}} </td>
             <td>
-                <button class="btn" (click)="handleViewShelfPositions(device.device.id)" 
-                [routerLink]="['/view-shelf-positions', device.device.id]">View Shelf Positions</button>
+                <button class="btn" (click)="handleViewShelfPositions(device)">View Shelf Positions</button>
             </td>
             </tr>
         }
