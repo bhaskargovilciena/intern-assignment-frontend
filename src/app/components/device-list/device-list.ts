@@ -2,22 +2,29 @@ import { ChangeDetectorRef, Component, inject, NgZone, OnInit } from '@angular/c
 import { DeviceService } from '../../services/device-service';
 import { Device } from '../../classes/device';
 import { ShelfPosition } from '../../classes/shelf-position';
+import { Shelf } from '../../classes/shelf';
+import { Router, RouterLink } from '@angular/router';
+
+interface ShelfPositionToShelf {
+  shelfPosition:ShelfPosition,
+  shelf:Shelf | null
+}
 
 interface Result {
   device:Device,
-  shelfPositions:ShelfPosition[]
+  shelfPositions:ShelfPositionToShelf[]
 }
 
 @Component({
   selector: 'app-device-list',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './device-list.html',
   styleUrl: './device-list.css',
 })
 export class DeviceList implements OnInit {
   devices:Result[] = []
 
-  constructor(private deviceService:DeviceService, private cdr:ChangeDetectorRef) {}
+  constructor(private deviceService:DeviceService, private cdr:ChangeDetectorRef, private router:Router) {}
 
   ngOnInit():void {
     this.getAllDevices();
@@ -29,5 +36,9 @@ export class DeviceList implements OnInit {
       this.devices = [...result]
       this.cdr.detectChanges()
     })
+  }
+
+  handleViewShelfPositions(deviceId:string) {
+    console.log(deviceId)
   }
 }

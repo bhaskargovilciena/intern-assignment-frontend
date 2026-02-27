@@ -3,10 +3,16 @@ import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Device } from '../classes/device';
 import { ShelfPosition } from '../classes/shelf-position';
+import { Shelf } from '../classes/shelf';
+
+interface ShelfPositionToShelf {
+  shelfPosition:ShelfPosition,
+  shelf:Shelf | null
+}
 
 interface Result {
   device:Device,
-  shelfPositions:ShelfPosition[]
+  shelfPositions:ShelfPositionToShelf[]
 }
 
 @Injectable({

@@ -7,6 +7,7 @@
             <th> Building Name</th>
             <th> Device Type</th>
             <th> Number of Shelf Positions</th>
+            <th>View Shelf Positions</th>
         </tr>
     </thead>
     <tbody>
@@ -17,11 +18,10 @@
             <td> {{device.device.buildingName}} </td>
             <td> {{device.device.deviceType}} </td>
             <td> {{device.device.numberOfShelfPositions}} </td>
-            <!-- <td>
-                <button (click) = "updateEmployee(employee.id)" class = "btn btn-info"> Update</button>
-                <button (click) = "deleteEmployee(employee.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
-                <button (click) = "employeeDetails(employee.id)" class = "btn btn-info" style="margin-left: 10px"> View</button>
-            </td> -->
+            <td>
+                <button class="btn" (click)="handleViewShelfPositions(device.device.id)" 
+                [routerLink]="['/view-shelf-positions', device.device.id]">View Shelf Positions</button>
+            </td>
             </tr>
         }
     </tbody>
