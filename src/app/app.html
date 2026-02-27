@@ -1,16 +1,14 @@
 <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
     <ul class = "navbar-nav">
         <li class = "nav-item">
-            <a routerLink="get-devices" routerLinkActive="active" class="nav-link" >Get All Devices
-
-            </a>
+            <button class="btn" (click)="this.router.navigate(['/'])">Get All Devices </button>
         </li>
     </ul>
     <ul class = "navbar-nav">
         <li class = "nav-item">
-            <a routerLink="create-device" routerLinkActive="active" class="nav-link" >Create Device
-                
-            </a>
+            <button class="btn" (click)="this.router.navigate(['/create-device'])">
+                Create Device
+            </button>
         </li>
     </ul>
 </nav>

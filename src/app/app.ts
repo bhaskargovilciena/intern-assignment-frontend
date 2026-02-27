@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet, RouterLinkActive } from '@angular/router';
+import { RouterOutlet, RouterLinkActive, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,4 +9,5 @@ import { RouterOutlet, RouterLinkActive } from '@angular/router';
 })
 export class App {
   protected readonly title = signal('Device Inventory Management');
+  constructor(public router:Router) {}
 }
