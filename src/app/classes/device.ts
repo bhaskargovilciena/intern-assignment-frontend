@@ -1,9 +1,9 @@
 export class Device {
     id: string = "";
     isDeleted: boolean = false;
-    deviceName:string = ""
-    partNumber:string = ""
-    buildingName:string = ""
-    deviceType:string = ""
-    numberOfShelfPositions:number = 0
+    deviceName:string = "demo"
+    partNumber:string = "demo"
+    buildingName:string = "demo"
+    deviceType:string = "demo"
+    numberOfShelfPositions:number = 1
 }
