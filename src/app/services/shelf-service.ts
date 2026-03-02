@@ -26,9 +26,9 @@ export class ShelfService {
     return this.httpClient.post<Shelf>(`${this.baseURL}/shelf/create?shelfPositionId=${this.currentShelfPosition.id}`, shelf)
   }
 
-  deleteShelf(shelf:Shelf):void|null {
+  deleteShelf(shelf:Shelf):Observable<boolean>|null {
     if(this.currentShelfPosition == null) return null
-    this.httpClient.delete(`${this.baseURL}/shelf/delete?shelfId=${shelf.id}`)
+    return this.httpClient.delete<boolean>(`${this.baseURL}/shelf/delete?shelfId=${shelf.id}`)
     console.log("shelf with id: " + shelf.id + " deleted")
   }
 }

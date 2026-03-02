@@ -3,7 +3,8 @@
     <table class = "table table-striped">
     <thead>
         <tr>
-            <th> ID</th>
+            <th> Shelf Position ID</th>
+            <th> Shelf ID</th>
             <th> Shelf Name</th>
             <th> Part Number</th>
             <th>Performable Operation</th>
@@ -14,11 +15,13 @@
             <tr>
             <td> {{item.shelfPosition.id}} </td>
             @if(item.shelf) {
+                <td>{{item.shelf.id}}</td>
                 <td>{{item.shelf.name}}</td>
                 <td>{{item.shelf.partNumber}}</td>
                 <td><button class="btn" (click)="handleDeleteShelf(item)">Delete Shelf</button></td>
             }
             @else {
+                <td>NA</td>
                 <td>NA</td>
                 <td>NA</td>
                 <td><button class="btn" (click)="handleAddShelf(item.shelfPosition)">Add Shelf</button></td>

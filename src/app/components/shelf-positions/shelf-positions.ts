@@ -5,6 +5,7 @@ import { DeviceService } from '../../services/device-service';
 import { Device } from '../../classes/device';
 import { ShelfService } from '../../services/shelf-service';
 import { Router } from '@angular/router';
+import { errorContext } from 'rxjs/internal/util/errorContext';
 
 interface ShelfPositionToShelf {
   shelfPosition:ShelfPosition,
@@ -38,6 +39,8 @@ export class ShelfPositions {
   }
 
   handleDeleteShelf(shelfPositionToShelf:ShelfPositionToShelf) {
+    if(shelfPositionToShelf.shelf == null) return
+    this.shelfService.deleteShelf(shelfPositionToShelf.shelf)?.subscribe((data) => console.log(data), error => console.error(error))
     shelfPositionToShelf.shelf = null
   }
 }
