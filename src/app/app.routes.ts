@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { DeviceList } from './components/device-list/device-list';
 import { CreateDevice } from './components/create-device/create-device';
 import { ShelfPositions } from './components/shelf-positions/shelf-positions';
+import { CreateShelf } from './components/create-shelf/create-shelf';
 
 export const routes: Routes = [
     {
@@ -19,5 +20,9 @@ export const routes: Routes = [
     {
         path: 'view-shelf-positions',
         component: ShelfPositions,
+    },
+    {
+        path: 'create-shelf',
+        component: CreateShelf
     }
 ];

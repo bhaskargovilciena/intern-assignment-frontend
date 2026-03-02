@@ -1,5 +1,6 @@
-<h4> Shelf Positions List For Device Name: {{device?.device?.deviceName}}</h4>
-<table class = "table table-striped">
+@if(this.device) {
+    <h4> Shelf Positions List For Device Name: {{device.device.deviceName}}</h4>
+    <table class = "table table-striped">
     <thead>
         <tr>
             <th> ID</th>
@@ -9,20 +10,24 @@
         </tr>
     </thead>
     <tbody>
-        @for (item of device?.shelfPositions; track $index) {
+        @for (item of device.shelfPositions; track $index) {
             <tr>
             <td> {{item.shelfPosition.id}} </td>
             @if(item.shelf) {
                 <td>{{item.shelf.name}}</td>
                 <td>{{item.shelf.partNumber}}</td>
-                <td><button class="btn">Delete</button></td>
+                <td><button class="btn" (click)="handleDeleteShelf(item.shelf)">Delete</button></td>
             }
             @else {
                 <td>NA</td>
                 <td>NA</td>
-                <td><button class="btn">Add</button></td>
+                <td><button class="btn" (click)="handleAddShelf(item.shelfPosition)">Add</button></td>
             }
             </tr>
         }
     </tbody>
 </table>
+}
+@else {
+    <h3>Select a device to view its shelf positions</h3>
+}
