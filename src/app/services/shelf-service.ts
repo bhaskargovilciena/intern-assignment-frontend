@@ -28,7 +28,12 @@ export class ShelfService {
 
   deleteShelf(shelf:Shelf):Observable<boolean>|null {
     if(this.currentShelfPosition == null) return null
-    return this.httpClient.delete<boolean>(`${this.baseURL}/shelf/delete?shelfId=${shelf.id}`)
     console.log("shelf with id: " + shelf.id + " deleted")
+    return this.httpClient.delete<boolean>(`${this.baseURL}/shelf/delete?shelfId=${shelf.id}`)
+  }
+
+  deleteShelfPosition(shelfPosition:ShelfPosition):Observable<boolean> {
+    console.log("shelf position with ID: " + shelfPosition.id + " deleted")
+    return this.httpClient.delete<boolean>(`${this.baseURL}/shelf-position/delete?id=${shelfPosition.id}`)
   }
 }

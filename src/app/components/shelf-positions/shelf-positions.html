@@ -8,6 +8,7 @@
             <th> Shelf Name</th>
             <th> Part Number</th>
             <th>Performable Operation</th>
+            <th>Delete Shelf Position</th>
         </tr>
     </thead>
     <tbody>
@@ -26,6 +27,11 @@
                 <td>NA</td>
                 <td><button class="btn" (click)="handleAddShelf(item.shelfPosition)">Add Shelf</button></td>
             }
+            <td>
+                <button class="btn" (click)="handleDeleteShelfPosition(item.shelfPosition)">
+                    Delete Shelf Position
+                </button>
+            </td>
             </tr>
         }
     </tbody>

@@ -43,4 +43,11 @@ export class ShelfPositions {
     this.shelfService.deleteShelf(shelfPositionToShelf.shelf)?.subscribe((data) => console.log(data), error => console.error(error))
     shelfPositionToShelf.shelf = null
   }
+
+  handleDeleteShelfPosition(shelfPosition:ShelfPosition) {
+    if(this.device == null) return
+    this.shelfService.deleteShelfPosition(shelfPosition).subscribe(data => console.log(data), error => console.error(error)
+    )
+    this.device.shelfPositions = this.device.shelfPositions.filter(sp => sp.shelfPosition.id !== shelfPosition.id)
+  }
 }
