@@ -16,7 +16,7 @@
             @if(item.shelf) {
                 <td>{{item.shelf.name}}</td>
                 <td>{{item.shelf.partNumber}}</td>
-                <td><button class="btn" (click)="handleDeleteShelf(item.shelf)">Delete Shelf</button></td>
+                <td><button class="btn" (click)="handleDeleteShelf(item)">Delete Shelf</button></td>
             }
             @else {
                 <td>NA</td>

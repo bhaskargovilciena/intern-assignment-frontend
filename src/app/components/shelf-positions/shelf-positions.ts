@@ -37,7 +37,7 @@ export class ShelfPositions {
     this.router.navigate(['/create-shelf'])
   }
 
-  handleDeleteShelf(shelf:Shelf) {
-    // add shelf service and 
+  handleDeleteShelf(shelfPositionToShelf:ShelfPositionToShelf) {
+    shelfPositionToShelf.shelf = null
   }
 }
