@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   styleUrl: './create-shelf.css',
 })
 export class CreateShelf {
-  shelfPosition:ShelfPosition = new ShelfPosition();
+  shelfPosition:ShelfPosition|null = null;
 
   constructor(private shelfService:ShelfService, private router:Router){
     this.shelfPosition = shelfService.getCurrentShelfPosition()
@@ -20,8 +20,8 @@ export class CreateShelf {
 
   shelf:Shelf = new Shelf()
 
-  onSubmit() {
-    this.shelfService.createShelf(this.shelf).subscribe(data => {
+  onSubmit():void|null {
+    this.shelfService.createShelf(this.shelf)?.subscribe(data => {
       this.shelf = data
       console.log("shelf with id: " + this.shelf.id + " created")
       this.returnToHomePage()
