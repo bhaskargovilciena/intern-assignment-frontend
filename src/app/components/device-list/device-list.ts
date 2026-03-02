@@ -36,6 +36,7 @@ export class DeviceList implements OnInit {
       this.devices = [...result]
       this.cdr.detectChanges()
     })
+    this.deviceService.setAllDevices(this.devices)
   }
 
   handleViewShelfPositions(device:Result|null) {

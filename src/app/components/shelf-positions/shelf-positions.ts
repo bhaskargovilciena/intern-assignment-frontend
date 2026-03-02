@@ -50,4 +50,10 @@ export class ShelfPositions {
     )
     this.device.shelfPositions = this.device.shelfPositions.filter(sp => sp.shelfPosition.id !== shelfPosition.id)
   }
+
+  handleUpdateShelf(shelf:Shelf|null) {
+    if(shelf == null) return 
+    this.shelfService.setCurrentShelf(shelf)
+    this.router.navigate(['/update-shelf'])
+  }
 }

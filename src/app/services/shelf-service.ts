@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Shelf } from '../classes/shelf';
-import { Observable } from 'rxjs';
+import { Observable, share } from 'rxjs';
 import { ShelfPosition } from '../classes/shelf-position';
 
 @Injectable({
@@ -12,6 +12,7 @@ export class ShelfService {
   baseURL:string = "http://localhost:8080"
 
   currentShelfPosition:ShelfPosition|null = null
+  currentShelf:Shelf|null = null
 
   getCurrentShelfPosition():ShelfPosition|null {
     return this.currentShelfPosition
@@ -19,6 +20,14 @@ export class ShelfService {
 
   setCurrentShelfPosition(shelfPosition:ShelfPosition):void {
     this.currentShelfPosition = shelfPosition;
+  }
+
+  getCurrentShelf() {
+    return this.currentShelf
+  }
+
+  setCurrentShelf(shelf:Shelf|null) {
+    this.currentShelf = shelf
   }
 
   createShelf(shelf:Shelf):Observable<Shelf>|null {
@@ -35,5 +44,11 @@ export class ShelfService {
   deleteShelfPosition(shelfPosition:ShelfPosition):Observable<boolean> {
     console.log("shelf position with ID: " + shelfPosition.id + " deleted")
     return this.httpClient.delete<boolean>(`${this.baseURL}/shelf-position/delete?id=${shelfPosition.id}`)
+  }
+
+  updateShelf(shelf:Shelf):Observable<Shelf>|null {
+    console.log("shelf with ID: " + shelf?.id + " updated")
+    if(shelf == null) return null
+    return this.httpClient.put<Shelf>(`${this.baseURL}/shelf/update?shelfId=${shelf.id}&name=${shelf.name}&partNumber=${shelf.partNumber}`,"")
   }
 }

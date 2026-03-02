@@ -19,13 +19,21 @@
                 <td>{{item.shelf.id}}</td>
                 <td>{{item.shelf.name}}</td>
                 <td>{{item.shelf.partNumber}}</td>
-                <td><button class="btn" (click)="handleDeleteShelf(item)">Delete Shelf</button></td>
+                <td><button class="btn" (click)="handleDeleteShelf(item)">Delete Shelf</button>
+                <button class="btn" (click)="handleUpdateShelf(item.shelf)">
+                        Update Shelf
+                </button>
+            </td>
             }
             @else {
                 <td>NA</td>
                 <td>NA</td>
                 <td>NA</td>
-                <td><button class="btn" (click)="handleAddShelf(item.shelfPosition)">Add Shelf</button></td>
+                <td>
+                    <button class="btn" (click)="handleAddShelf(item.shelfPosition)">
+                        Add Shelf
+                    </button>
+                </td>
             }
             <td>
                 <button class="btn" (click)="handleDeleteShelfPosition(item.shelfPosition)">

@@ -1,0 +1,25 @@
+@if(shelf) {
+    <div class="col-md-6 offset-md-3">
+        <h3> Create Device </h3>
+        <form (ngSubmit) = "onSubmit()">
+        
+            <div class="form-group">
+                <label> Shelf Name</label>
+                <input type="text" class ="form-control" id = "shelfName"
+                    [(ngModel)] = "shelf.name" name = "shelfName">
+            </div>
+            
+            <div class="form-group">
+                <label> Part Number</label>
+                <input type="text" class ="form-control" id = "partNumber"
+                    [(ngModel)] = "shelf.partNumber" name = "partNumber">
+            </div>
+        
+            <button class = "btn btn-success" type ="submit">Submit</button>
+        
+        </form>
+    </div> 
+}
+@else {
+    <h3>Select a shelf to update</h3>
+}

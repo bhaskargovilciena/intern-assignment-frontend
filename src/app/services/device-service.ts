@@ -24,10 +24,20 @@ export class DeviceService {
 
   private currentDevice:Result|null = null;
 
+  private allDevices:Result[]|null = null
+
   private baseURL = "http://localhost:8080"
   
   getAllDevices():Observable<Result[]> {
     return this.httpClient.get<Result[]>(`${this.baseURL}/device/search`)
+  }
+
+  getAllDevicesStatic():Result[]|null {
+    return this.allDevices;
+  }
+
+  setAllDevices(allDevices:Result[]|null) {
+    this.allDevices = allDevices;
   }
 
   createDevice(device: Device):Observable<Result[]> {
