@@ -41,4 +41,8 @@ export class DeviceService {
   setCurrentDevice(device:Result|null):void {
     this.currentDevice = device;
   }
+
+  deleteDevice(deviceId:string):Observable<boolean> {
+    return this.httpClient.delete<boolean>(`${this.baseURL}/device/delete?id=${deviceId}`)
+  }
 }

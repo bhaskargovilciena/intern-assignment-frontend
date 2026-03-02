@@ -42,4 +42,10 @@ export class DeviceList implements OnInit {
     this.deviceService.setCurrentDevice(device)
     this.router.navigate(['/view-shelf-positions'])
   }
+
+  handleDelete(device:Result):void {
+    this.deviceService.deleteDevice(device.device.id).subscribe(data => console.log(device.device.id + " deleted"))
+    
+    this.devices = this.devices.filter(d => d !== device)
+  }
 }
