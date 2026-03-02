@@ -9,6 +9,7 @@
             <th> Number of Shelf Positions</th>
             <th>View Shelf Positions</th>
             <th>Delete Device</th>
+            <th>Update Device</th>
         </tr>
     </thead>
     <tbody>
@@ -24,6 +25,9 @@
             </td>
             <td>
                 <button class="btn" (click)="handleDelete(device)">Delete device</button>
+            </td>
+            <td>
+                <button class="btn" (click)="handleUpdate(device)">Update Device</button>
             </td>
             </tr>
         }

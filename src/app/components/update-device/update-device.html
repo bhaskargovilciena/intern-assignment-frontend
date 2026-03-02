@@ -1,0 +1,37 @@
+@if(device) {
+    <div class="col-md-6 offset-md-3">
+    <h3> Create Device </h3>
+    <form (ngSubmit) = "onSubmit()">
+    
+        <div class="form-group">
+            <label> Device Name</label>
+            <input type="text" class ="form-control" id = "deviceName"
+                [(ngModel)] = "device.device.deviceName" name = "deviceName">
+        </div>
+        
+        <div class="form-group">
+            <label> Part Number</label>
+            <input type="text" class ="form-control" id = "partNumber"
+                [(ngModel)] = "device.device.partNumber" name = "partNumber">
+        </div>
+        
+        <div class="form-group">
+            <label> Device Type</label>
+            <input type="text" class ="form-control" id = "deviceType"
+                [(ngModel)] = "device.device.deviceType" name = "deviceType">
+        </div>
+
+        <div class="form-group">
+            <label> Building Name</label>
+            <input type="text" class="form-control" id="buildingName"
+            [(ngModel)]="device.device.buildingName" name="buildingName">
+        </div>
+    
+        <button class = "btn btn-success" type ="submit">Submit</button>
+    
+    </form>
+    </div> 
+}
+@else {
+    <h3>Select device to update</h3>
+}

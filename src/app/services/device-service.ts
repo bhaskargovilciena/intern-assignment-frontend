@@ -45,4 +45,9 @@ export class DeviceService {
   deleteDevice(deviceId:string):Observable<boolean> {
     return this.httpClient.delete<boolean>(`${this.baseURL}/device/delete?id=${deviceId}`)
   }
+
+  updateDevice(device:Result|null):Observable<Device>|null {
+    if(device == null) return null
+    return this.httpClient.put<Device>(`${this.baseURL}/device/update?id=${device.device.id}&deviceName=${device.device.deviceName}&buildingName=${device.device.buildingName}&deviceType=${device.device.deviceType}&partNumber=${device.device.partNumber}`,"")
+  }
 }

@@ -48,4 +48,9 @@ export class DeviceList implements OnInit {
     
     this.devices = this.devices.filter(d => d !== device)
   }
+
+  handleUpdate(device:Result) {
+    this.deviceService.setCurrentDevice(device)
+    this.router.navigate(['/update-device'])
+  }
 }
