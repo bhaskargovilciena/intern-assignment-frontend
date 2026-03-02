@@ -1,0 +1,19 @@
+@if(device) {
+    <div class="col-md-6 offset-md-3">
+    <h3> Add Shelf Positions for Device Name: {{device.device.deviceName}} </h3>
+    <form (ngSubmit) = "onSubmit()">
+
+        <div class="form-group">
+            <label> Add Shelf Positions</label>
+            <input type="text" class="form-control" id="numberOfShelfPositions"
+            [(ngModel)]="numberOfShelfPositions" name="numberOfShelfPositions">
+        </div>
+    
+        <button class = "btn btn-success" type ="submit">Submit</button>
+    
+    </form>
+    </div> 
+}
+@else {
+    <h3>Select device to update</h3>
+}

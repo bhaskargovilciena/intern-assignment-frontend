@@ -10,6 +10,7 @@
             <th>View Shelf Positions</th>
             <th>Delete Device</th>
             <th>Update Device</th>
+            <th>Add Shelf Positions</th>
         </tr>
     </thead>
     <tbody>
@@ -28,6 +29,9 @@
             </td>
             <td>
                 <button class="btn" (click)="handleUpdate(device)">Update Device</button>
+            </td>
+            <td>
+                <button class="btn" (click)="handleAddShelfPositions(device)">Add Shelf Positions</button>
             </td>
             </tr>
         }

@@ -54,4 +54,9 @@ export class DeviceList implements OnInit {
     this.deviceService.setCurrentDevice(device)
     this.router.navigate(['/update-device'])
   }
+
+  handleAddShelfPositions(device:Result) {
+    this.deviceService.setCurrentDevice(device)
+    this.router.navigate(['/add-shelf-positions'])
+  }
 }

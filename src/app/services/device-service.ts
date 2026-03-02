@@ -60,4 +60,8 @@ export class DeviceService {
     if(device == null) return null
     return this.httpClient.put<Device>(`${this.baseURL}/device/update?id=${device.device.id}&deviceName=${device.device.deviceName}&buildingName=${device.device.buildingName}&deviceType=${device.device.deviceType}&partNumber=${device.device.partNumber}`,"")
   }
+
+  addShelfPositions(device:Result|null, numberOfPositions:number|null):Observable<ShelfPositionToShelf[]>|null {
+    return this.httpClient.post<ShelfPositionToShelf[]>(`${this.baseURL}/shelf-position/create?deviceId=${device?.device.id}&numberOfShelfPositions=${numberOfPositions}`,"")
+  }
 }
