@@ -1,6 +1,6 @@
 .btn {
-    border-radius: 1rem;
+    color: black;
+    border-width: 0.1rem;
     border-color: black;
-    margin-top: 0.25rem;
-    margin-bottom: 0.25rem;
+    margin-right: 1rem;
 }
