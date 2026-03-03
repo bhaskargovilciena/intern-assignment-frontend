@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, inject, NgZone, OnInit } from '@angular/core';
-import { DeviceService } from '../../services/device-service';
+import { DeviceService } from '../../services/device service/device-service';
 import { Device } from '../../classes/device';
 import { ShelfPosition } from '../../classes/shelf-position';
 import { Shelf } from '../../classes/shelf';

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DeviceService } from '../../services/device-service';
+import { DeviceService } from '../../services/device service/device-service';
 import { FormsModule } from '@angular/forms';
 import { ShelfPosition } from '../../classes/shelf-position';
 import { Shelf } from '../../classes/shelf';

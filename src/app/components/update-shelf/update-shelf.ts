@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { Shelf } from '../../classes/shelf';
-import { ShelfService } from '../../services/shelf-service';
+import { ShelfService } from '../../services/shelf service/shelf-service';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { DeviceService } from '../../services/device-service';
+import { DeviceService } from '../../services/device service/device-service';
 
 @Component({
   selector: 'app-update-shelf',

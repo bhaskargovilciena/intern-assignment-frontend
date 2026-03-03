@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Shelf } from '../classes/shelf';
+import { Shelf } from '../../classes/shelf';
 import { Observable, share } from 'rxjs';
-import { ShelfPosition } from '../classes/shelf-position';
+import { ShelfPosition } from '../../classes/shelf-position';
 
 @Injectable({
   providedIn: 'root',

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Device } from '../../classes/device';
 import { FormsModule } from '@angular/forms';
-import { DeviceService } from '../../services/device-service';
+import { DeviceService } from '../../services/device service/device-service';
 import { Router } from '@angular/router';
 
 @Component({
