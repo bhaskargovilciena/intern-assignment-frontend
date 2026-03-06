@@ -26,6 +26,10 @@
             <input type="text" class="form-control" id="buildingName"
             [(ngModel)]="device.device.buildingName" name="buildingName">
         </div>
+
+        @if(errorMessage) {
+            <p class="error-message">{{errorMessage}}</p>
+        }
     
         <button class = "btn btn-success" type ="submit">Submit</button>
     

@@ -30,7 +30,33 @@ export class UpdateDevice {
     this.device = this.deviceService.getCurrentDevice()
   }
 
+  errorMessage:string|null = null
+
+  showErrorMessage(fieldMissing:string) {
+    return "Please enter " + fieldMissing;
+  }
+
   async onSubmit() {
+    if(this.device?.device.buildingName.trim() == "") {
+      this.errorMessage = this.showErrorMessage("building name")
+      return
+    }
+    if(this.device?.device.deviceName.trim() == "") {
+      this.errorMessage = this.showErrorMessage("device name")
+      return 
+    }
+    if(this.device?.device.deviceType.trim() == "") {
+      this.errorMessage = this.showErrorMessage("device type")
+      return 
+    }
+    if(this.device?.device.partNumber.trim() == "") {
+      this.errorMessage = this.showErrorMessage("part number")
+      return 
+    }
+    if(this.device?.device.numberOfShelfPositions == 0) {
+      this.errorMessage = this.showErrorMessage("number of shelf positions greater than 0")
+      return 
+    }
     this.deviceService.updateDevice(this.device)?.subscribe((data) => console.log(data), error => console.error(error))
     await new Promise(resolve => setTimeout(resolve, 1000))
     this.router.navigate(['/'])
