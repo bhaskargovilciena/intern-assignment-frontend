@@ -20,7 +20,21 @@ export class CreateShelf {
 
   shelf:Shelf = new Shelf()
 
+  errorMessage:string|null = null
+
+  showErrorMessage(message:string) {
+    return "Please enter " + message
+  }
+
   onSubmit():void|null {
+    if(this.shelf.name.trim() == "") {
+      this.errorMessage = this.showErrorMessage("shelf name")
+      return
+    }
+    if(this.shelf.partNumber.trim() == "") {
+      this.errorMessage = this.showErrorMessage("shelf part number")
+      return
+    }
     this.shelfService.createShelf(this.shelf)?.subscribe(data => {
       this.shelf = data
       console.log("shelf with id: " + this.shelf.id + " created")

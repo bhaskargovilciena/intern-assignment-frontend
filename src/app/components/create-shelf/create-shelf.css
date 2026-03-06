@@ -1,3 +1,9 @@
 .btn {
     margin-top: 1rem;
 }
+
+.error-message {
+    margin-top: 1rem;
+    color: red;
+    margin-bottom: -0.5rem;
+}
