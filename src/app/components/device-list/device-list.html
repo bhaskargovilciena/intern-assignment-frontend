@@ -1,3 +1,4 @@
+@if (devices.length > 0) {
 <h2> Device List</h2>
 <table class = "table table-striped">
     <thead>
@@ -37,3 +38,7 @@
         }
     </tbody>
 </table>
+}
+@else {
+    <h3>No Devices Found</h3>
+}
