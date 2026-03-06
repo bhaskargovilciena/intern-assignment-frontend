@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Shelf } from '../../classes/shelf/shelf';
-import { Observable, share } from 'rxjs';
+import { Observable } from 'rxjs';
 import { ShelfPosition } from '../../classes/shelf position/shelf-position';
 
 @Injectable({
@@ -35,8 +35,7 @@ export class ShelfService {
     return this.httpClient.post<Shelf>(`${this.baseURL}/shelf/create?shelfPositionId=${this.currentShelfPosition.id}`, shelf)
   }
 
-  deleteShelf(shelf:Shelf):Observable<boolean>|null {
-    if(this.currentShelfPosition == null) return null
+  deleteShelf(shelf:Shelf):Observable<boolean> {
     console.log("shelf with id: " + shelf.id + " deleted")
     return this.httpClient.delete<boolean>(`${this.baseURL}/shelf/delete?shelfId=${shelf.id}`)
   }
