@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Shelf } from '../../classes/shelf';
+import { Shelf } from '../../classes/shelf/shelf';
 import { ShelfService } from '../../services/shelf service/shelf-service';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';

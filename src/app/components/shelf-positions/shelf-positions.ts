@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { ShelfPosition } from '../../classes/shelf-position';
-import { Shelf } from '../../classes/shelf';
+import { ShelfPosition } from '../../classes/shelf position/shelf-position';
+import { Shelf } from '../../classes/shelf/shelf';
 import { DeviceService } from '../../services/device service/device-service';
-import { Device } from '../../classes/device';
+import { Device } from '../../classes/device/device';
 import { ShelfService } from '../../services//shelf service/shelf-service';
 import { Router } from '@angular/router';
 import { errorContext } from 'rxjs/internal/util/errorContext';

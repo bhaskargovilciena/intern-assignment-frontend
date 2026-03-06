@@ -1,8 +1,8 @@
 import { ChangeDetectorRef, Component, inject, NgZone, OnInit } from '@angular/core';
 import { DeviceService } from '../../services/device service/device-service';
-import { Device } from '../../classes/device';
-import { ShelfPosition } from '../../classes/shelf-position';
-import { Shelf } from '../../classes/shelf';
+import { Device } from '../../classes/device/device';
+import { ShelfPosition } from '../../classes/shelf position/shelf-position';
+import { Shelf } from '../../classes/shelf/shelf';
 import { Router } from '@angular/router';
 
 interface ShelfPositionToShelf {
