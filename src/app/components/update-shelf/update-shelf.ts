@@ -14,11 +14,25 @@ import { DeviceService } from '../../services/device service/device-service';
 export class UpdateShelf {
   shelf:Shelf|null = new Shelf();
 
+  errorMessage:string|null = null
+
+  showErrorMessage(message:string) {
+    return "Please enter " + message
+  }
+
   constructor(private shelfService:ShelfService, private router:Router, private deviceSerice:DeviceService) {
     this.shelf = shelfService.getCurrentShelf()
   }
 
   async onSubmit() {
+    if(this.shelf?.name.trim() == "") {
+      this.errorMessage = this.showErrorMessage("shelf name")
+      return
+    }
+    if(this.shelf?.partNumber.trim() == "") {
+      this.errorMessage = this.showErrorMessage("shelf part number")
+      return
+    }
     if(this.shelf == null) return
     this.shelfService.updateShelf(this.shelf)?.subscribe((data) => console.log(data), error => console.error(error)
     )
