@@ -17,5 +17,15 @@
 }
  
 .main-component {
-    margin: 2rem;
+    margin: 1rem;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.heading {
+    margin: 1rem;
 }
