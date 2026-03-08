@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { ShelfPosition } from '../../classes/shelf position/shelf-position';
 import { Shelf } from '../../classes/shelf/shelf';
 import { DeviceService } from '../../services/device service/device-service';
@@ -34,7 +34,7 @@ export class ShelfPositions {
 
   handleAddShelf(shelfPosition:ShelfPosition) {
     this.shelfService.setCurrentShelfPosition(shelfPosition)
-    this.router.navigate(['/create-shelf'])
+    this.router.navigate(['/add-shelf'])
   }
 
   handleDeleteShelf(shelfPositionToShelf:ShelfPositionToShelf) {

@@ -6,6 +6,7 @@ import { CreateShelf } from './components/create-shelf/create-shelf';
 import { UpdateDevice } from './components/update-device/update-device';
 import { UpdateShelf } from './components/update-shelf/update-shelf';
 import { AddShelfPosition } from './components/add-shelf-position/add-shelf-position';
+import { AddShelf } from './components/add-shelf/add-shelf';
 
 export const routes: Routes = [
     {
@@ -39,5 +40,9 @@ export const routes: Routes = [
     {
         path: 'add-shelf-positions',
         component: AddShelfPosition
+    },
+    {
+        path: 'add-shelf',
+        component: AddShelf
     }
 ];

@@ -1,0 +1,31 @@
+@if (shelves().length > 0 && shelfPosition) {
+<h2> Avaiable Shelves</h2>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th> Shelf Name</th>
+            <th> Part Number</th>
+            <th>Add Shelf</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (shelf of shelves(); track shelf.id) {
+            <tr>
+            <td>{{shelf.id}}</td>
+            <td>{{shelf.name}}</td>
+            <td>{{shelf.partNumber}}</td>
+            <td>
+                <button class="btn" (click)="addShelf(shelf)">Add Shelf</button>
+            </td>
+            </tr>
+        }
+    </tbody>
+</table>
+}
+@else if(shelves().length == 0) {
+    <h3>No Available Shelves Found</h3>
+}
+@else if (!shelfPosition) {
+    <h3>No Shelf Position Selected</h3>
+}
