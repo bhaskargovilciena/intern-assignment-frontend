@@ -12,11 +12,8 @@ import { Router } from '@angular/router';
   styleUrl: './create-shelf.css',
 })
 export class CreateShelf {
-  shelfPosition:ShelfPosition|null = null;
 
-  constructor(private shelfService:ShelfService, private router:Router){
-    this.shelfPosition = shelfService.getCurrentShelfPosition()
-  }
+  constructor(private shelfService:ShelfService, private router:Router){}
 
   shelf:Shelf = new Shelf()
 

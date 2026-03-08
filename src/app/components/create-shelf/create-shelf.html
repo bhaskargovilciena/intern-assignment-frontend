@@ -1,29 +1,24 @@
-@if(shelfPosition) {
-    <div class="col-md-6 offset-md-3">
-        <h3> Create Shelf </h3>
-        <form (ngSubmit) = "onSubmit()">
+<div class="col-md-6 offset-md-3">
+    <h3> Create Shelf </h3>
+    <form (ngSubmit) = "onSubmit()">
+    
+        <div class="form-group">
+            <label> Shelf Name</label>
+            <input type="text" class ="form-control" id = "shelfName"
+                [(ngModel)] = "shelf.name" name = "shelfName">
+        </div>
         
-            <div class="form-group">
-                <label> Shelf Name</label>
-                <input type="text" class ="form-control" id = "shelfName"
-                    [(ngModel)] = "shelf.name" name = "shelfName">
-            </div>
-            
-            <div class="form-group">
-                <label> Part Number</label>
-                <input type="text" class ="form-control" id = "partNumber"
-                    [(ngModel)] = "shelf.partNumber" name = "partNumber">
-            </div>
+        <div class="form-group">
+            <label> Part Number</label>
+            <input type="text" class ="form-control" id = "partNumber"
+                [(ngModel)] = "shelf.partNumber" name = "partNumber">
+        </div>
 
-            @if(errorMessage) {
-                <p class="error-message">{{errorMessage}}</p>
-            }
-        
-            <button class = "btn btn-success" type ="submit">Submit</button>
-        
-        </form>
-    </div> 
-}
-@else {
-    <h3>Select a shelf position to add shelf to</h3>
-}
+        @if(errorMessage) {
+            <p class="error-message">{{errorMessage}}</p>
+        }
+    
+        <button class = "btn btn-success" type ="submit">Submit</button>
+    
+    </form>
+</div> 

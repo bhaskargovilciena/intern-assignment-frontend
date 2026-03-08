@@ -31,8 +31,7 @@ export class ShelfService {
   }
 
   createShelf(shelf:Shelf):Observable<Shelf>|null {
-    if(this.currentShelfPosition == null) return null
-    return this.httpClient.post<Shelf>(`${this.baseURL}/shelf/create?shelfPositionId=${this.currentShelfPosition.id}`, shelf)
+    return this.httpClient.post<Shelf>(`${this.baseURL}/shelf/create`, shelf)
   }
 
   deleteShelf(shelf:Shelf):Observable<boolean> {
