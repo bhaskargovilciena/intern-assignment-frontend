@@ -31,8 +31,7 @@ export class ShelfService {
   }
 
   createShelf(shelf:Shelf):Observable<Shelf>|null {
-    if(this.currentShelfPosition == null) return null
-    return this.httpClient.post<Shelf>(`${this.baseURL}/shelf/create?shelfPositionId=${this.currentShelfPosition.id}`, shelf)
+    return this.httpClient.post<Shelf>(`${this.baseURL}/shelf/create`, shelf)
   }
 
   deleteShelf(shelf:Shelf):Observable<boolean> {
@@ -49,5 +48,13 @@ export class ShelfService {
     console.log("shelf with ID: " + shelf?.id + " updated")
     if(shelf == null) return null
     return this.httpClient.put<Shelf>(`${this.baseURL}/shelf/update?shelfId=${shelf.id}&name=${shelf.name}&partNumber=${shelf.partNumber}`,"")
+  }
+
+  getAvailableShelfPositions():Observable<Shelf[]> {
+    return this.httpClient.get<Shelf[]>(`${this.baseURL}/shelf/get/available`)
+  }
+
+  linkShelfWithShelfPosition(shelfPositionId:string, shelfId:string):Observable<Shelf>|null {
+    return this.httpClient.put<Shelf>(`${this.baseURL}/shelf/link?shelfPositionId=${shelfPositionId}&shelfId=${shelfId}`,"")
   }
 }
