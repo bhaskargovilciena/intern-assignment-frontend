@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Device } from '../../classes/device/device';
 import { ShelfPosition } from '../../classes/shelf position/shelf-position';
 import { Shelf } from '../../classes/shelf/shelf';
+import { environment } from '../../../environments/environment.development';
 
 interface ShelfPositionToShelf {
   shelfPosition:ShelfPosition,
@@ -26,7 +27,7 @@ export class DeviceService {
 
   private allDevices:Result[]|null = null
 
-  private baseURL = "http://localhost:8080"
+  private baseURL = environment.apiUrl;
   
   getAllDevices():Observable<Result[]> {
     return this.httpClient.get<Result[]>(`${this.baseURL}/device/search`)

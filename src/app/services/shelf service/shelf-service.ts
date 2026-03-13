@@ -3,13 +3,14 @@ import { Injectable } from '@angular/core';
 import { Shelf } from '../../classes/shelf/shelf';
 import { Observable } from 'rxjs';
 import { ShelfPosition } from '../../classes/shelf position/shelf-position';
+import { environment } from '../../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ShelfService {
   constructor(private httpClient:HttpClient) {}
-  baseURL:string = "http://localhost:8080"
+  baseURL:string = environment.apiUrl;
 
   currentShelfPosition:ShelfPosition|null = null
   currentShelf:Shelf|null = null
